@@ -1,0 +1,38 @@
+@use "../utils/functions/"as*;
+@use "../utils/mixins"as*;
+
+* {
+  font-variation-settings:
+    'wght'var(--font-weight, 375),
+    'wdth'var(--font-width, 80);
+}
+
+.page {
+  --line-height: 20;
+
+  @include font-size(12, var(--line-heigth));
+
+  font-family: var(--font-family-primary);
+  font-weight: var(--font-weight);
+  font-style: normal;
+  letter-spacing: 0;
+  height: 200vh;
+  color: var(--color-dark-400);
+  background: var(--color-white);
+
+  &__body {
+    min-width: 320px;
+    min-height: 100%;
+  }
+}
+
+.container {
+  margin: 0 auto;
+  padding: 0 var(--container-offset);
+  width: 100%;
+  max-width: var(--container-width);
+}
+
+.main {
+  @include footerToBottom;
+}

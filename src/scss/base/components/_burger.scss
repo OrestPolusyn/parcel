@@ -1,0 +1,47 @@
+@use "../utils/mixins"as*;
+
+.burger {
+  --width: 16px;
+  --height: 2px;
+  --gap: 2px;
+  --background: #000;
+  --radius: 100px;
+  --clientPoint: 10px;
+  --animation-burger: 0.2s;
+  --burger-height: calc((var(--height) * 3) + var(--gap) * 2);
+  --x-width: calc(var(--burger-height) * 1.414);
+
+  @include burger;
+  @include flex;
+
+  position: absolute;
+  flex-direction: column;
+  gap: var(--gap);
+
+  &.focus-visible {
+    outline: transparent;
+  }
+
+  &--active {
+    --background: red;
+
+    &::before,
+    &::after {
+      width: var(--x-width);
+    }
+
+    &::before {
+      transform: translate(0, calc(var(--height) / -2)) rotate(45deg);
+    }
+
+    &::after {
+      transform: translate(0, calc(var(--height) / 2)) rotate(-45deg);
+    }
+
+    span {
+      width: 0;
+      opacity: 0;
+      visibility: hidden;
+    }
+  }
+}

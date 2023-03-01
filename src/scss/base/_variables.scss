@@ -1,0 +1,20 @@
+:root {
+  // container
+  --content-width: 1110px;
+  --container-offset: 15px;
+  --container-width: calc(var(--content-width) + (var(--container-offset) * 2));
+
+  // base
+  --font-family: "Montserrat", sans-serif;
+  --font-weight: 400;
+  --font-size: 18px;
+
+  // colors
+  --color-white: #fff;
+  --color-black: #000;
+
+  // radius
+  --radius-main: 15px;
+
+  //shadow
+}

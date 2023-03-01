@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" class="page scroll">
+
+<include src="./html/_head.html"></include>
+
+<body class="page__body">
+  <div class="site-container">
+    <include src="./html/_header.html"></include>
+
+    <main class="main">
+
+
+    </main>
+
+    <include src="./html/_footer.html"></include>
+  </div>
+
+  <script defer>
+    const startHeightValue = () => {
+      let vh = window.innerHeight * 1;
+      document.querySelector(':root').style.setProperty('--vh', `${vh}px`);
+
+      const pageHeader = document.querySelector('.header')
+      const headerHeight = pageHeader ? pageHeader.offsetHeight : 0;
+      document.documentElement.style.setProperty(
+        '--header-height',
+        `${headerHeight}px`
+      );
+    }
+
+    startHeightValue();
+
+    window.addEventListener('resize', startHeightValue);
+  </script>
+
+</body>
+
+</html>
